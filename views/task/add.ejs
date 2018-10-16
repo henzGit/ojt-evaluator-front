@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../template/head'); %>
+
+    <!-- Custom Css -->
+    <link rel="stylesheet" type="text/css" href="/public/css/create-account.css">
+
+    <!-- Custom Js -->
+    <script src="/public/js/task/add-ajax.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-static-top navbar-dark bg-inverse">
+        <a class="navbar-brand" href="#">OJT Evaluator</a>
+        <ul class="nav navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/account/welcome-mentee">Home
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav pull-right">
+            <li class="nav-item">
+                <a class="nav-link " href="/account/logout">Logout</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="row main">
+            <div class="panel-heading">
+                <div class="panel-title text-center">
+                    <h1 class="title">Add a task in <%= phaseName %></h1>
+                    <hr/>
+                </div>
+            </div>
+            <div class="main-login main-center">
+                <form class="form-horizontal" method="post" action="" id="formAddTask">
+                    <input type="hidden" value="<%= phaseId %>" id="inputPhaseId">
+                    <div class="form-group">
+                        <label for="inputTaskName" class="cols-sm-2 control-label">Task Name</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-circle fa" aria-hidden="true"></i>
+                                </span>
+                                <input type="text"
+                                       class="form-control"
+                                       name="inputTaskName"
+                                       id="inputTaskName"
+                                       placeholder="Enter the Task Name"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputStartDate" class="cols-sm-2 control-label">Start Date</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-calendar fa" aria-hidden="true"></i>
+                                </span>
+                                <input type="text"
+                                       class="form-control"
+                                       name="inputStartDate"
+                                       id="inputStartDate"
+                                       placeholder="Enter the Start Date"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEndDate" class="cols-sm-2 control-label">End Date</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-calendar fa" aria-hidden="true"></i>
+                                </span>
+                                <input type="text"
+                                       class="form-control"
+                                       name="inputEndDate"
+                                       id="inputEndDate"
+                                       placeholder="Enter the End Date"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <button type="button"
+                                id="btnAddPTask"
+                                class="btn btn-primary btn-lg btn-block login-button">Add
+                        </button>
+                    </div>
+                    <hr>
+                    <div class="" id="errorMsg"></div>
+                </form>
+            </div>
+            <hr>
+            <%- include('../template/footer'); %>
+        </div>
+    </div>
+    </body>
+</html>

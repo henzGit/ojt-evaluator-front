@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../template/head'); %>
+    <!-- Custom Css -->
+    <link rel="stylesheet" type="text/css" href="/public/css/welcome-mentee.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-static-top navbar-dark bg-inverse">
+        <a class="navbar-brand" href="#">OJT Evaluator</a>
+        <ul class="nav navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/account/welcome-mentee">Home
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item"></li>
+        </ul>
+        <ul class="nav navbar-nav pull-right">
+            <li class="nav-item">
+                <a class="nav-link " href="/account/logout">Logout</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">List of Tasks in <%= phaseName %></div>
+            <div class="panel-body">
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        <th>Task Name</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <% tasks.forEach(function(task) { %>
+                        <tr>
+                            <td><%= task.name%></td>
+                            <td><%= task.start_date%></td>
+                            <td><%= task.end_date%></td>
+                        </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+                <a href="/task/view-add/phase/<%= phaseId %>"
+                    class="btn btn-default">
+                    Add
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </a>
+                <hr>
+                <a href="/account/welcome-mentee"
+                   type="button"
+                   id="btnBack"
+                   class="btn btn-primary pull-right">Back
+                </a>
+            </div>
+        </div>
+    </div> <!-- /container -->
+    <div class="container">
+        <%- include('../template/footer'); %>
+    </div> <!-- /container -->
+</body>
+
+</html>

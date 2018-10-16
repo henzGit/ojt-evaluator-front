@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../template/head'); %>
+    <!-- Custom Css -->
+    <link rel="stylesheet" type="text/css" href="/public/css/create-account.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-static-top navbar-dark bg-inverse">
+        <a class="navbar-brand" href="#">OJT Evaluator</a>
+        <ul class="nav navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/account/welcome-mentor">Home
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav pull-right">
+            <li class="nav-item">
+                <a class="nav-link " href="/account/logout">Logout</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="row main">
+            <div class="panel-heading">
+                <div class="panel-title text-center">
+                    <h1 class="title">Display All of Evaluated Phases</h1>
+                    <hr/>
+                </div>
+            </div>
+            <div class="main-login main-center-large panel-body">
+                <table class = "table table-striped table-bordered table-hover" >
+                    <tr>
+                        <td>Mentee name: </td>
+                        <td><%= partnerFullName %></td>
+                    </tr>
+                </table>
+                <table class = "table table-striped table-bordered table-hover" >
+                    <tr>
+                        <th>Phase Name</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Status</th>
+                    </tr>
+                    <% phases.forEach(function(phase) { %>
+                        <% if(phase.status ) { %>
+                            <tr>
+                                <td><%= phase.name %> </td>
+                                <td> <%= phase.start_date %> </td>
+                                <td><%= phase.end_date %> </td>
+                            <% if(phase.status == 1) { %>
+                                <td>Delayed </td>
+                            <% } else if(phase.status == 2) { %>
+                                <td>On Schedule</td>
+                            <% } else if(phase.status == 3) { %>
+                                <td>In Advance</td>
+                            <% } %>
+                            </tr>
+                        <% } %>
+                    <% }); %>
+                </table>
+                <div class="form-group ">
+                    <a href="/account/welcome-mentor" type="button" id="btnBack" class="btn btn-primary btn-lg btn-block login-button">Back</a>
+                </div>
+            </div>
+            <hr>
+            <%- include('../template/footer'); %>
+        </div>
+    </div>
+
+</body>
+
+</html>

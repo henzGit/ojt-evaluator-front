@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../template/head'); %>
+    <!-- Custom Css -->
+    <link rel="stylesheet" type="text/css" href="/public/css/create-account.css">
+    <!-- Custom Js -->
+    <script src="/public/js/account/login-ajax.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-static-top navbar-dark bg-inverse">
+        <a class="navbar-brand" href="#">OJT Evaluator</a>
+        <ul class="nav navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/account/view-create">Register</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="row main">
+            <div class="panel-heading">
+                <div class="panel-title text-center">
+                    <h1 class="title">Login to your account</h1>
+                    <hr />
+                </div>
+            </div>
+            <div class="main-login main-center">
+                <form class="form-horizontal"
+                      method="post" action="#"
+                      id="formLoginAccount">
+                    <div class="form-group">
+                        <label for="inputEmail"
+                               class="cols-sm-2 control-label">
+                            Your Email
+                        </label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-envelope fa" aria-hidden="true"></i>
+                                </span>
+                                <input type="text"
+                                       class="form-control"
+                                       name="inputEmail"
+                                       id="inputEmail"
+                                       placeholder="Enter your Email"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword"
+                               class="cols-sm-2 control-label">
+                            Password
+                        </label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-lock fa-lg" aria-hidden="true"></i>
+                                </span>
+                                <input type="password"
+                                       class="form-control"
+                                       name="inputPassword"
+                                       id="inputPassword"
+                                       placeholder="Enter your Password"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <button type="button"
+                                class="btn btn-primary btn-lg btn-block login-button"
+                                id="btnLoginAccount">
+                            Login
+                        </button>
+                    </div>
+                    <div class="login-register">
+                        <a href="/account/view-create">Register</a>
+                    </div>
+                    <hr>
+                    <div class="" id="errorMsg"></div>
+                </form>
+            </div>
+            <hr>
+            <%- include('../template/footer'); %>
+        </div>
+    </div>
+</body>
+</html>

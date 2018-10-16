@@ -1,0 +1,13 @@
+{
+
+  "frontEnd" : {
+    "host" : "http://localhost",
+    "port" : "8080"
+  },
+
+  "backEnd" : {
+    "host" : "https://demo-cake-henz00.herokuapp.com/",
+    "port" : "80"
+  }
+
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../template/head'); %>
+    <!-- Custom Css -->
+    <link rel="stylesheet" type="text/css" href="/public/css/welcome-mentee.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-static-top navbar-dark bg-inverse">
+        <a class="navbar-brand" href="#">OJT Evaluator</a>
+        <ul class="nav navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <% if(menteeId) { %>
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="/account/view-evaluations/<%= menteeId %>">
+                        Display Evaluations
+                    </a>
+                </li>
+            <% } %>
+        </ul>
+        <ul class="nav navbar-nav pull-right">
+            <li class="nav-item">
+                <a class="nav-link " href="/account/logout">Logout</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+    <h5>Welcome, <%= firstName %> <%= lastName %> </h5>
+    <div class="panel panel-default">
+        <div class="panel-heading">List of Submitted Phases</div>
+        <div class="panel-body">
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th >Phase Name</th>
+                        <th>Evaluation Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <% phases.forEach(function(phase) { %>
+                    <tr>
+                        <td> <%= phase.name%></td>
+                        <% if(phase.status) { %>
+                            <td>Yes</td>
+                            <td>
+                                <a href="/phase/view-evaluate/<%= phase.id%>"
+                                   class="btn btn-default disabled">Evaluate
+                                    <i class="fa fa-send" aria-hidden="true"></i>
+                                </a>
+                            </td>
+                        <% } else { %>
+                            <td>No</td>
+                            <td>
+                                <a href="/phase/view-evaluate/<%= phase.id%>"
+                                   class="btn btn-default" >Evaluate
+                                    <i class="fa fa-send" aria-hidden="true"></i>
+                                </a>
+                            </td>
+                        <% } %>
+                    </tr>
+                <% }); %>
+                </tbody>
+            </table>
+        </div>
+        <% if(partnerFirstName) { %>
+            <div class="panel-footer">Mentee:
+                <%= partnerFirstName %>
+                <%= partnerLastName %>
+            </div>
+        <% } else { %>
+            <div class="panel-footer">Mentee:  None </div>
+        <% } %>
+    </div>
+</div> <!-- /container -->
+
+    <div class="container">
+        <%- include('../template/footer'); %>
+    </div> <!-- /container -->
+</body>
+
+</html>

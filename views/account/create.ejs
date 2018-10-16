@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../template/head'); %>
+    <!-- Custom Css -->
+    <link rel="stylesheet" type="text/css" href="/public/css/create-account.css">
+    <!-- Custom Js -->
+    <script src="/public/js/account/create-ajax.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-static-top navbar-dark bg-inverse">
+        <a class="navbar-brand" href="#">OJT Evaluator</a>
+        <ul class="nav navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/account/view-login">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Register</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="row main">
+            <div class="panel-heading">
+                <div class="panel-title text-center">
+                    <h1 class="title">Create an account</h1>
+                    <hr />
+                </div>
+            </div>
+            <div class="main-login main-center">
+                <form class="form-horizontal"
+                      method="post" action=""
+                      id="formCreateAccount">
+                    <div class="form-group">
+                        <label for="inputFirstName"
+                               class="cols-sm-2 control-label">
+                            First Name
+                        </label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-user fa" aria-hidden="true"></i>
+                                </span>
+                                <input type="text"
+                                       class="form-control"
+                                       name="inputFirstName"
+                                       id="inputFirstName"
+                                       placeholder="Enter your First Name"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputLastName"
+                               class="cols-sm-2 control-label">
+                            Last Name
+                        </label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-user fa" aria-hidden="true"></i>
+                                </span>
+                                <input type="text"
+                                       class="form-control"
+                                       name="inputLastName"
+                                       id="inputLastName"
+                                       placeholder="Enter your Last Name"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="selectAccountType"
+                               class="cols-sm-2 control-label">
+                            Account Type
+                        </label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-users fa" aria-hidden="true"></i>
+                                </span>
+                                <select id="selectAccountType"
+                                        class="form-control"
+                                        name="selectAccountType">
+                                    <option value=1>Mentee</option>
+                                    <option value=2>Mentor</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail"
+                               class="cols-sm-2 control-label">
+                            Your Email
+                        </label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-envelope fa" aria-hidden="true"></i>
+                                </span>
+                                <input type="text"
+                                       class="form-control"
+                                       name="inputEmail"
+                                       id="inputEmail"
+                                       placeholder="Enter your Email"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword"
+                               class="cols-sm-2 control-label">
+                            Password
+                        </label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-lock fa-lg" aria-hidden="true"></i>
+                                </span>
+                                <input type="password"
+                                       class="form-control"
+                                       name="inputPassword"
+                                       id="inputPassword"
+                                       placeholder="Enter your Password"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputConfirmPassword"
+                               class="cols-sm-2 control-label">
+                            Confirm Password
+                        </label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-lock fa-lg"
+                                       aria-hidden="true">
+                                    </i>
+                                </span>
+                                <input type="password"
+                                       class="form-control"
+                                       name="inputConfirmPassword"
+                                       id="inputConfirmPassword"
+                                       placeholder="Confirm your Password"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <button type="button"
+                                id="btnRegisterAccount"
+                                class="btn btn-primary btn-lg btn-block login-button">
+                            Register
+                        </button>
+                    </div>
+                    <div class="login-register">
+                        <a href="">Login</a>
+                    </div>
+                    <hr>
+                    <div class="" id="errorMsg">
+                    </div>
+                </form>
+            </div>
+            <hr>
+            <%- include('../template/footer'); %>
+        </div>
+    </div>
+</body>
+
+</html>

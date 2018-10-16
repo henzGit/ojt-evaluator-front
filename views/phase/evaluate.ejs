@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../template/head'); %>
+    <!-- Custom Css -->
+    <link rel="stylesheet" type="text/css" href="/public/css/create-account.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-static-top navbar-dark bg-inverse">
+        <a class="navbar-brand" href="#">OJT Evaluator</a>
+        <ul class="nav navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/account/welcome-mentee">Home
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav pull-right">
+            <li class="nav-item">
+                <a class="nav-link " href="/account/logout">Logout</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="row main">
+            <div class="panel-heading">
+                <div class="panel-title text-center">
+                    <h1 class="title">Evaluate a phase</h1>
+                    <hr/>
+                </div>
+            </div>
+            <div class="main-login main-center">
+                <form class="form-horizontal"
+                      method="post"
+                      action="/phase/evaluate"
+                      id="formEvaluatePhase">
+                    <input type="hidden"
+                           name="inputPhaseId"
+                           id="inputPhaseId"
+                           value="<%= phaseId %>"/>
+                    <div class="form-group">
+                        <label for="inputPhaseName"
+                               class="cols-sm-2 control-label">
+                            Phase Name
+                        </label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-circle fa"
+                                       aria-hidden="true">
+                                    </i>
+                                </span>
+                                <input type="text"
+                                       class="form-control"
+                                       name="inputPhaseName"
+                                       id="inputPhaseName"
+                                       value="<%= phaseName %>" disabled/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputStartDate"
+                               class="cols-sm-2 control-label">Start Date
+                        </label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-circle fa" aria-hidden="true"></i>
+                                </span>
+                                <input type="text"
+                                       class="form-control"
+                                       name="inputStartDate"
+                                       id="inputStartDate"
+                                       value="<%= startDate %>" disabled/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEndDate"
+                               class="cols-sm-2 control-label">End Date
+                        </label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-circle fa" aria-hidden="true"></i>
+                                </span>
+                                <input type="text"
+                                       class="form-control"
+                                       name="inputEndDate"
+                                       id="inputEndDate"
+                                       value="<%= endDate %>"
+                                       disabled/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="selectPhaseStatus"
+                               class="cols-sm-2 control-label">
+                            Status
+                        </label>
+                        <div class="cols-sm-10">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-circle fa" aria-hidden="true"></i>
+                                </span>
+                                <select id="selectPhaseStatus"
+                                        class="form-control"
+                                        name="selectPhaseStatus">
+                                    <option value=1> delayed </option>
+                                    <option value=2> on schedule </option>
+                                    <option value=3> in advance </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <button type="submit"
+                                id="btnEvaluatePhase"
+                                class="btn btn-primary btn-lg btn-block login-button">
+                            Send Evaluation
+                        </button>
+                    </div>
+                    <hr>
+                    <div class="" id="errorMsg"></div>
+                </form>
+            </div>
+            <hr>
+            <%- include('../template/footer'); %>
+        </div>
+    </div>
+</body>
+
+</html>
